@@ -1,0 +1,572 @@
+/**************************************************
+    TOOLS 
+**************************************************/
+
+:root {
+    --bgColor1: #2d3436; /*general background : dark*/
+    --white: #ffffff; /* white color */
+    --cityLight: #dfe6e9; /*light grey*/
+    --soothingBreeze: #b2bec3; /*medium grey*/
+    --americanRiver: #636e72; /*dark grey*/
+    --darkGrey: #464e51; /*really dark grey*/
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+
+/**************************************************
+**************************************************
+    MOBIL-FIRST
+**************************************************
+**************************************************/
+
+
+/**************************************************
+    GENERALITY
+**************************************************/
+
+body {
+    -ms-overflow-style: scrollbar;
+    display: flex;
+    background-color: #2d3436;
+    background-color: var(--bgColor1);
+    color: #dfe6e9;
+    color: --var(--cityLight);
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    font-family: 'Libre Franklin', sans-serif;
+    flex-direction: column;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    color: var(--white);
+    transition: all 0.7s ease-in;
+    
+}
+
+a:hover {
+    transform: scale(1.5);
+    color: #b2bec3;
+    color: var(--soothingBreeze);
+}
+
+input, select, button {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+header, main {
+    flex-grow: 1;
+}
+
+
+/********** HEADER **********/
+
+header {
+    position: absolute;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    background-color: #2d3436;
+    background-color: var(--bgColor1);
+    width: 100%;
+}
+
+header p {
+    z-index: 2;
+    background-color: #2d3436;
+    background-color: var(--bgColor1);
+    width: 100%;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 2.5rem;
+}
+
+.toolbar {
+    align-items: center;
+    background-color: #464e51;
+    background-color: var(--darkGrey);
+    animation: display .7s ease-in-out;
+}
+
+@keyframes display {
+    0% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.toolbar ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.toolbar ul li {
+    padding: 2rem;
+    transition: all 1s;
+}
+
+.toolbar ul li:not(:last-child) {
+    border-bottom: 1px solid;
+}
+
+.toolbar ul li:hover {
+    transform: scale(1.2);
+}
+
+.toolbar ul li a {
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.active {
+    background-color: var(--americanRiver);
+    background-color: #636e72;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+
+/********** MAIN **********/
+
+main {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+
+/********** FOOTER **********/
+
+footer p:nth-of-type(3) {
+    transition: all .5s;
+}
+
+footer p:nth-of-type(3):hover {
+    transform: scale(1.1);
+}
+
+
+/**************************************************
+    HOME
+**************************************************/
+
+.intro {
+    flex-direction: column;
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    animation: intro 2s ease-in-out;
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.intro p:first-of-type {
+    font-weight: bold;
+    font-size: 50px;
+    color: #b2bec3;
+    margin-bottom: 0;
+}
+
+.intro img {
+    border-radius: 50%;
+    width: 80%;
+    box-shadow: 20px -10px var(--americanRiver);
+    box-shadow: 20px -10px #636e72;
+}
+
+.catch_text {
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    border: 1px solid #dfe6e9;
+    border: 1px solid var(--cityLight);
+    animation: zoom 2s ease-in-out;
+}
+
+.catch_text article {
+    text-align: left;
+    margin-left: 2rem;
+    
+}
+
+@keyframes zoom {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.catch_text pre:first-child {
+    text-align: left;
+}
+
+.catch_text pre:last-child {
+    text-align: right;
+}
+
+.catch_text .let {
+    color: #00d2f7;
+}
+
+.catch_text span {
+    color: #ff0050;
+}
+
+@keyframes from-left {
+    0%{
+        transform: translateX(-1000%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes from-right {
+    0%{
+        transform: translateX(1000%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes from-bottom {
+    0%{
+        transform: translateY(2000%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+/**************************************************
+    CAREER
+**************************************************/
+
+.career, .projects {
+    line-height: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.career .experience, .projects .project {
+    padding: 2rem;
+    width: 80%;
+}
+
+.career h1, .projects h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.career h2, .projects h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.5rem;
+}
+
+.career .basic_languages i {
+    margin-right: 1rem;
+    font-size: 40px;
+}
+
+.career p span {
+    margin-right: 1rem;
+}
+
+.career .other_languages i {
+    margin-right: 1rem;
+    font-size: 30px;
+}
+
+.career svg {
+    margin-right: 1rem;
+    width: 30px;
+}
+
+.career .exp2, .career .exp0 {
+    text-align: left;
+    animation: exp-left 2s ease-in-out;
+}
+
+.career .exp1 {
+    align-self: flex-end;
+}
+
+.career .exp0 p {
+    line-height: 2rem;
+}
+
+@keyframes exp-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.career .exp1 {
+    text-align: right;
+    float: right;
+    animation: exp-right 2s ease-in-out;
+}
+
+@keyframes exp-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.career hr {
+    width: 60%;
+    margin-right: 0;
+}
+
+
+/**************************************************
+    PROJECTS
+**************************************************/
+
+.projects {
+    width: 100%;
+}
+
+.projects img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 50px -16px var(--americanRiver);
+    box-shadow: 50px -16px #636e72;
+    transition: all .5s
+}
+
+.projects a:hover img {
+    transform: scale(1.1);
+    transition: all .5s
+}
+
+.projects .pj1 {
+    align-self: center;
+    text-align: left;
+    animation: project-left 2s ease-in-out;
+}
+
+@keyframes project-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/**************************************************
+    CV
+**************************************************/
+
+.cv {
+    animation: translate-cv 2s ease-in-out;
+}
+
+@keyframes translate-cv {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+
+/**************************************************
+**************************************************
+    TABLET
+**************************************************
+**************************************************/
+
+@media screen and (min-width : 768px) {
+
+
+    /**************************************************
+        HOME
+    **************************************************/
+
+    .intro {
+        font-size: 40px;
+    }
+
+    .intro p:first-of-type {
+        text-align: left;
+        margin-left: 5rem;
+    }
+}
+
+
+
+/**************************************************
+**************************************************
+    DESKTOP
+**************************************************
+**************************************************/
+
+@media screen and (min-width : 980px) {
+
+    /**************************************************
+        GENERALITY
+    **************************************************/
+    header {
+        padding: 1rem;
+    }
+
+    header p {
+        display: none;
+    }
+
+    .toolbar {
+        display: flex;
+        border: none;
+        background-color: #2d3436;
+        background-color: var(--bgColor1);
+    }
+
+    .toolbar ul {
+        flex-direction: row;
+    }
+
+    .toolbar ul li {
+        margin: 0;
+        padding: 1rem;
+        transition: none;
+    }
+
+    .toolbar ul li:not(:last-child) {
+        border-bottom: none;
+    }
+
+    .active {
+        padding: 0;
+    }
+
+    main {
+        flex-direction: row;
+        width: 80%;
+    }
+
+
+    /**************************************************
+        HOME
+    **************************************************/
+
+    .intro {
+        margin-right: 2rem;
+    }
+
+    .intro p:first-of-type {
+        margin-left: 0;
+    }
+
+    .intro img {
+        margin: 2rem 5rem;
+    }
+
+    .catch_text {
+        width: 100%;
+    }
+
+
+    /**************************************************
+        CAREER
+    **************************************************/
+
+    .career .basic_languages i, .career .other_languages i, .career svg {
+        margin-right: 1rem;
+    }
+
+    .career p span {
+        margin-right: 5rem;
+    }
+
+
+    /**************************************************
+        PROJECTS
+    **************************************************/
+
+    .projects .pj1 {
+        align-self: auto;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Web d'Anne-Laure Bonnefond</title>
+        <script src="https://kit.fontawesome.com/4ead355834.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="public/img/favicon/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4ead355834.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="public/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    </head>
+    <body>
+        <header class="header">
+            <p><a href="#" id="menu"><i class="fas fa-bars"></i></a></p>
+            <nav class="toolbar">
+                <ul>
+                    <li <?php if(basename($_SERVER['REQUEST_URI']) =='home' || basename($_SERVER['REQUEST_URI']) == "index.php") { echo 'class="active"'; }  ?> >
+                        <a href="home">
+                                Accueil
+                        </a>
+                    </li>
+                    <li <?php if(basename($_SERVER['REQUEST_URI']) =='career' ) { echo 'class="active"'; }  ?> >
+                        <a href="career" >
+                                Parcours
+                        </a>
+                    </li>
+                    <li <?php if(basename($_SERVER['REQUEST_URI']) =='projects' ) { echo 'class="active"'; }  ?> >
+                        <a href="projects">
+                            Projets
+                        </a>
+                    </li>
+                    <li <?php if(basename($_SERVER['REQUEST_URI']) =='cv' ) { echo 'class="active"'; }  ?> >
+                        <a href="cv">
+                            CV
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <?php include $template; ?>
+        </main>
+        <footer class="footer">
+            <p>Mon profil vous intéresse ? C'est par ici !</p>
+            <p>&#128071;</p>
+            <p><a href="mailto:al.bonnefond@gmail.com">Me contacter</a></p>
+            <p>&copy; Tous droits réservés</p>
+        </footer>
+        <script src="public/js/menu.js"></script>
+    </body>
+</html>
